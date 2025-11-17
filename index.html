@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Instant Cover Letter Generator — By Cornelius Aurelius</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: #eef2f7;
+    color: #222;
+}
+header {
+    background: linear-gradient(135deg, #141e30, #243b55);
+    color: white;
+    padding: 30px;
+    text-align: center;
+    font-size: 26px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+.container {
+    max-width: 850px;
+    margin: 30px auto;
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 0 25px rgba(0,0,0,0.08);
+}
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 15px;
+    margin-top: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+button {
+    width: 100%;
+    padding: 14px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 8px;
+    background: #243b55;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+button:hover {
+    background: #141e30;
+}
+h2 {
+    margin-top: 35px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+.result-box {
+    background: #f0f7ff;
+    padding: 20px;
+    border-radius: 8px;
+    white-space: pre-wrap;
+    line-height: 1.6;
+}
+footer {
+    margin: 40px 0;
+    text-align: center;
+    font-size: 14px;
+    opacity: 0.8;
+}
+a {
+    color: #141e30;
+    font-weight: bold;
+}
+</style>
+</head>
+
+<body>
+
+<header>Instant Cover Letter Generator</header>
+
+<div class="container">
+    <p>Fill in the details below and click <b>Generate</b>. A polished, professional cover letter will appear instantly.</p>
+
+    <input id="name" placeholder="Your full name">
+    <input id="job" placeholder="Job title you're applying for">
+    <input id="company" placeholder="Company name">
+    <input id="skills" placeholder="Your top skills (comma separated)">
+    <textarea id="experience" placeholder="Describe your experience (2–4 sentences)" rows="4"></textarea>
+
+    <button onclick="generateLetter()">Generate Cover Letter</button>
+
+    <div id="output"></div>
+</div>
+
+<footer>
+    Created by <b>CORNELIUS AURELIUS</b><br>
+    <a href="https://zenodo.org/records/17362534" target="_blank">The Peace License</a>
+</footer>
+
+<script>
+function generateLetter() {
+    const name = document.getElementById("name").value.trim();
+    const job = document.getElementById("job").value.trim();
+    const company = document.getElementById("company").value.trim();
+    const skills = document.getElementById("skills").value.trim();
+    const experience = document.getElementById("experience").value.trim();
+
+    if (!name || !job || !company || !skills || !experience) {
+        alert("Please fill in all fields.");
+        return;
+    }
+
+    const skillList = skills.split(",").map(s => s.trim()).filter(Boolean);
+    const topSkill = skillList[0] || "";
+    const secondSkill = skillList[1] || "";
+
+    const letter = 
+`Dear Hiring Manager at ${company},
+
+I am writing to express my interest in the position of ${job}. With strong abilities in ${topSkill}${secondSkill ? " and " + secondSkill : ""}, I bring a focused, disciplined approach to producing high-quality work. I am confident that my skill set aligns closely with the needs of your organization.
+
+${experience}
+
+I am particularly drawn to ${company} because of its commitment to excellence and meaningful impact. I would welcome the opportunity to contribute my strengths to your team and continue growing in a role that values initiative and clarity.
+
+Thank you for considering my application. I look forward to the possibility of working together.
+
+Sincerely,
+${name}
+`;
+
+    document.getElementById("output").innerHTML = `
+        <h2>Your Generated Cover Letter</h2>
+        <div class="result-box">${letter}</div>
+    `;
+}
+</script>
+
+</body>
+</html>
