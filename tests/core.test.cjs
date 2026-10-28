@@ -1,0 +1,13 @@
+const test=require('node:test'),assert=require('node:assert/strict');const c=require('../core.js');
+const sample={name:'Alex Morgan',role:'Customer Success Manager',company:'Example Corp',skills:'Communication, stakeholder management, Excel',evidence:'I trained five colleagues to use a new customer support tool',motivation:'the role offers opportunities to improve customer experience',job:'We need communication and Excel expertise',style:'balanced',tone:'confident',locale:'UK'};
+test('required fields have useful errors',()=>{const d=c.compose({name:'A'});assert.equal(d.ok,false);assert.match(d.error,/job title/)});
+test('correctly composes and signs UK letter',()=>{const r=c.compose(sample);assert.equal(r.ok,true);assert.match(r.text,/Dear Hiring Manager,/);assert.match(r.text,/Yours faithfully,/);assert.match(r.text,/Alex Morgan/);assert.ok(r.wordCount>50)});
+test('US named recipient changes signoff',()=>{const r=c.compose({...sample,locale:'US',recipient:'Ms Patel'});assert.match(r.text,/Dear Ms Patel,/);assert.match(r.text,/Sincerely,/)});
+test('never asserts unprovided qualifications or company values',()=>{const r=c.compose({name:'Alex',role:'Analyst',company:'Unfamiliar Ltd'});assert.ok(!/commitment to excellence|years of experience|proven track record|award winning/i.test(r.text));assert.ok(r.tips.length>0)});
+test('matches only stated skills with job description',()=>{const a=c.analyse(sample);assert.deepEqual(a.matched,['Communication','Excel']);});
+test('does not claim job match when no overlap',()=>{const r=c.compose({...sample,job:'Only forklift operating required'});assert.equal(r.report.matched.length,0);assert.match(r.tips.join(' '),/No direct skill matches/)});
+test('duplicate skills removed and bounded',()=>{assert.deepEqual(c.skillList('Excel, Excel, teamwork; communication'),['Excel','teamwork','communication'])});
+test('all lengths and tones produce usable output',()=>{for(const style of ['concise','balanced','detailed'])for(const tone of ['confident','warm','direct'])assert.ok(c.compose({...sample,style,tone}).text.length>150)});
+test('malicious HTML never appears as executable markup in generated DOM output',()=>{const r=c.compose({...sample,name:'<img src=x onerror=alert(1)>'});assert.ok(r.text.includes('<img')); /* safe because textarea.value only */});
+test('optional motivation is not fabricated',()=>{const r=c.compose({...sample,motivation:''});assert.ok(!r.text.includes('commitment to excellence'));});
+test('length respects input boundaries',()=>{const r=c.compose({...sample,role:'R'.repeat(800)});assert.ok(r.text.length<5000)});

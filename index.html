@@ -1,146 +1,49 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en-GB">
 <head>
-<meta charset="UTF-8">
-<title>Instant Cover Letter Generator — By Cornelius Aurelius</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<style>
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background: #eef2f7;
-    color: #222;
-}
-header {
-    background: linear-gradient(135deg, #141e30, #243b55);
-    color: white;
-    padding: 30px;
-    text-align: center;
-    font-size: 26px;
-    font-weight: bold;
-    letter-spacing: 1px;
-}
-.container {
-    max-width: 850px;
-    margin: 30px auto;
-    background: #fff;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 0 25px rgba(0,0,0,0.08);
-}
-input, textarea {
-    width: 100%;
-    padding: 12px;
-    font-size: 15px;
-    margin-top: 10px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-}
-button {
-    width: 100%;
-    padding: 14px;
-    margin-top: 20px;
-    border: none;
-    border-radius: 8px;
-    background: #243b55;
-    color: white;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
-}
-button:hover {
-    background: #141e30;
-}
-h2 {
-    margin-top: 35px;
-    border-bottom: 2px solid #eee;
-    padding-bottom: 10px;
-}
-.result-box {
-    background: #f0f7ff;
-    padding: 20px;
-    border-radius: 8px;
-    white-space: pre-wrap;
-    line-height: 1.6;
-}
-footer {
-    margin: 40px 0;
-    text-align: center;
-    font-size: 14px;
-    opacity: 0.8;
-}
-a {
-    color: #141e30;
-    font-weight: bold;
-}
-</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0a1230">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="description" content="Instant Cover Letter Generator by Cornelius Aurelius. Write a tailored, editable cover letter in minutes with evidence-based wording, job-ad matching, UK and US formats, and free browser-only export.">
+<meta name="author" content="Cornelius Aurelius"><meta name="creator" content="Cornelius Aurelius">
+<link rel="canonical" href="https://cornelius-aurelius.github.io/instant-cover-letter/">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<meta property="og:type" content="website"><meta property="og:site_name" content="Instant Cover Letter Generator">
+<meta property="og:title" content="Instant Cover Letter Generator — Cover Letter Studio | Cornelius Aurelius">
+<meta property="og:description" content="Create an honest, polished cover letter using your real experience. Tailor it to a job advert, edit, copy and print for free.">
+<meta property="og:url" content="https://cornelius-aurelius.github.io/instant-cover-letter/">
+<meta property="og:image" content="https://cornelius-aurelius.github.io/instant-cover-letter/assets/social-preview.png"><meta name="twitter:card" content="summary_large_image">
+<title>Instant Cover Letter Generator — Free Cover Letter Studio | Cornelius Aurelius</title>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://corneliusaurelius.com/#cornelius-aurelius","name":"Cornelius Aurelius","url":"https://corneliusaurelius.com/"},{"@type":"WebSite","@id":"https://cornelius-aurelius.github.io/instant-cover-letter/#website","url":"https://cornelius-aurelius.github.io/instant-cover-letter/","name":"Instant Cover Letter Generator","creator":{"@id":"https://corneliusaurelius.com/#cornelius-aurelius"}},{"@type":"WebApplication","@id":"https://cornelius-aurelius.github.io/instant-cover-letter/#app","name":"Instant Cover Letter Generator — Cover Letter Studio","url":"https://cornelius-aurelius.github.io/instant-cover-letter/","description":"A free private cover letter creator with editable, job-tailored writing and browser-only export.","applicationCategory":"BusinessApplication","operatingSystem":"Any modern web browser","isAccessibleForFree":true,"inLanguage":"en-GB","creator":{"@id":"https://corneliusaurelius.com/#cornelius-aurelius"},"author":{"@id":"https://corneliusaurelius.com/#cornelius-aurelius"},"publisher":{"@id":"https://corneliusaurelius.com/#cornelius-aurelius"}},{"@type":"WebPage","@id":"https://cornelius-aurelius.github.io/instant-cover-letter/#page","name":"Free Instant Cover Letter Generator by Cornelius Aurelius","url":"https://cornelius-aurelius.github.io/instant-cover-letter/","mainEntity":{"@id":"https://cornelius-aurelius.github.io/instant-cover-letter/#app"},"creator":{"@id":"https://corneliusaurelius.com/#cornelius-aurelius"},"author":{"@id":"https://corneliusaurelius.com/#cornelius-aurelius"}}]}</script>
+<link rel="stylesheet" href="styles.css">
+<script defer src="core.js"></script>
+<script defer src="app.js"></script>
 </head>
-
 <body>
-
-<header>Instant Cover Letter Generator</header>
-
-<div class="container">
-    <p>Fill in the details below and click <b>Generate</b>. A polished, professional cover letter will appear instantly.</p>
-
-    <input id="name" placeholder="Your full name">
-    <input id="job" placeholder="Job title you're applying for">
-    <input id="company" placeholder="Company name">
-    <input id="skills" placeholder="Your top skills (comma separated)">
-    <textarea id="experience" placeholder="Describe your experience (2–4 sentences)" rows="4"></textarea>
-
-    <button onclick="generateLetter()">Generate Cover Letter</button>
-
-    <div id="output"></div>
+<a href="#workspace" class="skip">Skip to cover letter workspace</a>
+<div class="ambient ambient-a" aria-hidden="true"></div><div class="ambient ambient-b" aria-hidden="true"></div>
+<header class="topbar shell"><a class="brand" href="#home" aria-label="Cover Letter Studio home"><span class="brand-icon" aria-hidden="true">✦</span><span>CA<span class="brand-dot">.</span> <strong>STUDIO</strong><small>COVER LETTERS</small></span></a><nav aria-label="Page navigation"><a href="#how">How it works</a><a href="#questions">FAQ</a><a class="nav-cta" href="#workspace">Start writing <span aria-hidden="true">↗</span></a></nav></header>
+<main id="home">
+<section class="hero shell"><div class="hero-copy"><div class="eyebrow"><span class="pulse"></span> PRIVATE • FREE • NO ACCOUNT</div><h1>Make your first impression <em>count.</em></h1><p>Turn your real skills and experience into a professional cover letter. Tailor it to the role, refine every word, and take it with you.</p><div class="hero-pills"><span>✦ Evidence-first writing</span><span>⌁ Job advert matching</span><span>↗ Export in seconds</span></div></div><div class="hero-mark" aria-hidden="true"><div class="mark-lines"></div><span class="hero-monogram">CL<span>✧</span></span><div class="mark-caption">YOUR STORY. YOUR LETTER.</div></div></section>
+<section class="studio shell" id="workspace" aria-labelledby="studioTitle">
+<div class="workspace-head"><div><p class="micro">01 / CREATE YOUR LETTER</p><h2 id="studioTitle">The writing studio</h2><p>Your details stay in this browser unless you explicitly save a local draft.</p></div><div class="workspace-info"><span class="dot"></span> Browser-only writing engine</div></div>
+<div class="workspace-grid">
+<div class="editor-panel"><div class="panel-top"><h3>Tell us about the role</h3><span class="step-indicator">STEP 1 OF 2</span></div><form id="letterForm" novalidate>
+<div class="field-pair"><label>Full name <strong aria-label="required">*</strong><input id="name" name="name" autocomplete="name" maxlength="110" placeholder="e.g. Alex Morgan" required></label><label>Role you're applying for <strong aria-label="required">*</strong><input id="role" name="role" maxlength="160" placeholder="e.g. Marketing Coordinator" required></label></div>
+<div class="field-pair"><label>Organisation <strong aria-label="required">*</strong><input id="company" name="company" maxlength="150" placeholder="e.g. Northstar Studio" required></label><label>Contact detail <span>(optional)</span><input id="contact" name="contact" maxlength="160" placeholder="Email or telephone"></label></div>
+<label>Top strengths <span>(separate with commas)</span><textarea id="skills" name="skills" rows="2" maxlength="650" placeholder="e.g. customer communication, project coordination, Excel"></textarea></label>
+<label>Relevant experience or achievement <span>(use your own true examples)</span><textarea id="evidence" name="evidence" rows="3" maxlength="1900" placeholder="e.g. I coordinated a small team to deliver weekly campaigns on schedule."></textarea></label>
+<label>Why this opportunity appeals to you <span>(optional)</span><textarea id="motivation" name="motivation" rows="2" maxlength="600" placeholder="e.g. the role combines customer engagement with creative problem-solving"></textarea></label>
+<details class="details" id="tailor"><summary>More ways to tailor your letter <span>+ Job advert, greeting and format</span></summary><div class="detail-content"><label>Paste the job advert <span>(optional; stays in your browser)</span><textarea id="job" name="job" rows="4" maxlength="6500" placeholder="Paste the relevant responsibilities or requirements here..."></textarea></label><label>Recipient's name <span>(optional)</span><input id="recipient" name="recipient" maxlength="120" placeholder="e.g. Ms Patel"></label></div></details>
+<div class="customise"><p class="form-caption">Make it sound like you</p><div class="custom-grid"><fieldset><legend>Length</legend><div class="segmented" id="lengthGroup"><label><input type="radio" name="style" value="concise"><span>Concise</span></label><label><input type="radio" name="style" value="balanced" checked><span>Balanced</span></label><label><input type="radio" name="style" value="detailed"><span>Detailed</span></label></div></fieldset><label class="simple-select">Tone<select name="tone" id="tone"><option value="confident">Confident</option><option value="warm">Warm</option><option value="direct">Direct</option></select></label><label class="simple-select">Sign-off<select name="locale" id="locale"><option value="UK">UK English</option><option value="US">US English</option></select></label></div></div>
+<div class="form-actions"><button type="submit" class="primary" id="generateBtn"><span aria-hidden="true">✦</span> Generate my cover letter</button><button type="button" class="secondary" id="clearBtn">Clear form</button></div><p class="error" id="formError" role="alert" hidden></p>
+</form></div>
+<div class="preview-panel"><div class="panel-top"><h3>Live preview</h3><span id="previewStatus" class="status-chip">READY WHEN YOU ARE</span></div><div class="preview-banner"><span class="mini-icon">✧</span><span>Everything here is editable. Check the final letter before sending.</span></div><div class="paper-wrap"><div class="paper-top"><span class="paper-label">YOUR COVER LETTER</span><span class="paper-stars">✧ &nbsp; ✦</span></div><textarea id="letterText" aria-label="Editable generated cover letter" spellcheck="true" placeholder="Your letter will appear here. Fill in the form and select Generate to begin."></textarea><div id="emptyPreview" class="empty-preview" aria-hidden="true"><span class="empty-icon">✉</span><strong>A blank page. Full of possibility.</strong><span>Tell your story on the left, then shape it here.</span></div></div><div class="preview-bottom"><span id="wordCount">0 words</span><span id="matchBadge">Ready to tailor</span></div><div id="tips" class="tips" aria-live="polite" hidden></div><div class="export-actions"><button type="button" id="copyBtn" class="primary compact" disabled>Copy letter</button><button type="button" id="downloadBtn" class="secondary compact" disabled>Download .txt</button><button type="button" id="printBtn" class="secondary compact" disabled>Print / Save PDF</button></div><div class="draft-actions"><button type="button" id="saveBtn">Save private draft</button><button type="button" id="loadBtn">Load saved draft</button><button type="button" id="deleteBtn">Delete saved draft</button></div><p class="privacy-note">A saved draft is stored only in this browser's local storage. Do not save personal details on a shared device. We do not upload your information.</p><div id="notice" class="notice" aria-live="polite"></div></div>
 </div>
-
-<footer>
-    Created by <b>CORNELIUS AURELIUS</b><br>
-    <a href="https://zenodo.org/records/17362534" target="_blank">The Peace License</a>
-</footer>
-
-<script>
-function generateLetter() {
-    const name = document.getElementById("name").value.trim();
-    const job = document.getElementById("job").value.trim();
-    const company = document.getElementById("company").value.trim();
-    const skills = document.getElementById("skills").value.trim();
-    const experience = document.getElementById("experience").value.trim();
-
-    if (!name || !job || !company || !skills || !experience) {
-        alert("Please fill in all fields.");
-        return;
-    }
-
-    const skillList = skills.split(",").map(s => s.trim()).filter(Boolean);
-    const topSkill = skillList[0] || "";
-    const secondSkill = skillList[1] || "";
-
-    const letter = 
-`Dear Hiring Manager at ${company},
-
-I am writing to express my interest in the position of ${job}. With strong abilities in ${topSkill}${secondSkill ? " and " + secondSkill : ""}, I bring a focused, disciplined approach to producing high-quality work. I am confident that my skill set aligns closely with the needs of your organization.
-
-${experience}
-
-I am particularly drawn to ${company} because of its commitment to excellence and meaningful impact. I would welcome the opportunity to contribute my strengths to your team and continue growing in a role that values initiative and clarity.
-
-Thank you for considering my application. I look forward to the possibility of working together.
-
-Sincerely,
-${name}
-`;
-
-    document.getElementById("output").innerHTML = `
-        <h2>Your Generated Cover Letter</h2>
-        <div class="result-box">${letter}</div>
-    `;
-}
-</script>
-
-</body>
-</html>
+</section>
+<section class="steps shell" id="how"><div class="section-title"><p class="micro">02 / HOW IT WORKS</p><h2>Three steps. One stronger application.</h2></div><div class="steps-grid"><article><span class="step-number">01</span><h3>Add the facts</h3><p>Describe the job, your relevant strengths and a real achievement. The tool never invents qualifications or results.</p></article><article><span class="step-number">02</span><h3>Shape your story</h3><p>Choose a length and tone. Paste the job advert to compare it with the skills you supplied.</p></article><article><span class="step-number">03</span><h3>Make it yours</h3><p>Review and edit every line, then copy, download or use your browser's print-to-PDF option.</p></article></div></section>
+<section class="faq shell" id="questions"><div class="section-title"><p class="micro">03 / GOOD TO KNOW</p><h2>Built for a better application.</h2></div><div class="faq-grid"><article><h3>Is this an AI writing service?</h3><p>It uses a transparent writing template and your own evidence. No external generative AI service or secret API key is required.</p></article><article><h3>Does it make up experience?</h3><p>No. It only includes skills, achievements and reasons you provide. Review every sentence before applying.</p></article><article><h3>Does it store my personal data?</h3><p>Nothing is saved by default. You can choose to save or delete a draft locally on your device.</p></article><article><h3>Can I use it on my phone?</h3><p>Yes. The editor and preview adapt to mobile, tablet, laptop and desktop screens, with touch and keyboard support.</p></article></div></section>
+</main>
+<footer class="footer shell"><div><strong>Instant Cover Letter Generator</strong><span>Original creator, designer and developer: <a href="https://corneliusaurelius.com/" rel="author">Cornelius Aurelius</a></span></div><div><a href="https://zenodo.org/records/17362534" target="_blank" rel="noopener noreferrer">The Peace License — original reference</a><span>Free to use • No registration required</span></div></footer>
+</body></html>
