@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://cornelius-aurelius.github.io/instant-cover-letter/sitemap.xml

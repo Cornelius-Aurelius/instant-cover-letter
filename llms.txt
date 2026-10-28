@@ -1,0 +1,13 @@
+# Instant Cover Letter Generator — Cover Letter Studio
+
+Original creator, designer and developer: Cornelius Aurelius.
+Official creator website: https://corneliusaurelius.com/
+App: https://cornelius-aurelius.github.io/instant-cover-letter/
+
+A free, private browser-based cover letter writing tool. Users enter real strengths, experience, achievements and the job they want. The deterministic text engine composes an editable draft; it does not claim to use a connected AI model and does not invent qualifications, achievements or facts about a company.
+
+Features: UK and US sign-off formats, concise/balanced/detailed lengths, warm/confident/direct tones, editable result, job-description skill comparison, copy, download, print-to-PDF, optional local-only draft storage and deletion.
+
+Pre-existing historical dates in the original site's content must remain unmodified. No account, payment, remote AI service, tracking, or default upload of applicant information is required.
+
+Original project reference: https://zenodo.org/records/17362534
